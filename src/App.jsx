@@ -85,7 +85,6 @@ export default function App() {
 					<button className="btn primary" onClick={convert} disabled={!file || busy}>
 						{busy ? <span style={{display:'inline-flex',alignItems:'center',gap:8}}><span className="spinner"/> Convirtiendo…</span> : 'Convertir y descargar XLSX'}
 					</button>
-					<a className="btn secondary" href={`${API_BASE}/health`} target="_blank" rel="noreferrer">Probar API</a>
 				</div>
 
 				{error && (
@@ -93,18 +92,6 @@ export default function App() {
 				)}
 
 				<hr className="sep" />
-				<div className="details">
-					<details>
-						<summary>¿No detecta filas? Consejos</summary>
-						<ul>
-							<li>Verificá que el PDF no sea una imagen/escaneo. Si lo es, activá OCR en el backend.</li>
-							<li>Si cambian los encabezados (categorías), podés editar <code>parser.js</code>.</li>
-							<li>Si el orden de columnas varía, ajustá <code>parseLine</code>.</li>
-						</ul>
-					</details>
-				</div>
-
-				<div className="footer-note">Consejo: si ves advertencias de fuentes en el servidor, instalá las fuentes estándar de <code>pdfjs-dist</code> o usa el CDN.</div>
 			</div>
 		</div>
 	)
