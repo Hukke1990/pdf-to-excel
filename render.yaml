@@ -1,0 +1,18 @@
+# Ejemplo de servicio para Render (backend)
+# Ajustá según tu organización y secretos.
+services:
+  - type: web
+    name: pdf-to-excel-server
+    env: node
+    plan: free
+    repo: https://github.com/youruser/yourrepo  # <--- reemplazá por tu repo
+    branch: main
+    buildCommand: "cd server && npm install"
+    startCommand: "cd server && npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromDatabase: false
+    autoDeploy: true
+*** End Patch
